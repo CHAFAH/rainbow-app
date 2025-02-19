@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Colors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: <%= color %>;
+    }
+    h1 {
+      font-size: 3rem; /* Increased font size */
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      font-size: 1.5rem; /* Increased font size */
+      margin: 15px 0;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .color-callout {
+      font-size: 2rem; /* Increased font size */
+      font-weight: bold;
+      margin-top: 30px;
+      color: #333;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      border-radius: 5px;
+    }
+    .fun-facts {
+      text-align: left;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .fun-facts h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .fun-facts p {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Colors of the Rainbow</h1>
+    <ul>
+      <li><strong>Red</strong> - The color of passion and energy.</li>
+      <li><strong>Orange</strong> - The color of creativity and enthusiasm.</li>
+      <li><strong>Yellow</strong> - The color of happiness and optimism.</li>
+      <li><strong>Green</strong> - The color of nature and growth.</li>
+      <li><strong>Blue</strong> - The color of calm and trust.</li>
+      <li><strong>Indigo</strong> - The color of intuition and perception.</li>
+      <li><strong>Violet</strong> - The color of spirituality and imagination.</li>
+    </ul>
+
+    <!-- Display the current color -->
+    <div class="color-callout" id="colorCallout"></div>
+
+    <!-- Fun Facts Section -->
+    <div class="fun-facts">
+      <h2>Fun Facts About Rainbows</h2>
+      <p>
+        A rainbow is a meteorological phenomenon caused by reflection, refraction, and dispersion of light in water droplets, resulting in a spectrum of light appearing in the sky.
+      </p>
+      <p>
+        Did you know? A double rainbow occurs when light is reflected twice inside a raindrop. The second rainbow is fainter and has its colors reversed!
+      </p>
+      <p>
+        Rainbows are actually full circles, but we usually only see the upper half because the ground blocks the lower half.
+      </p>
+      <p>
+        The colors of the rainbow are always in the same order: red, orange, yellow, green, blue, indigo, and violet.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Function to call out the current color
+    function callOutColor() {
+      const color = "<%= color %>"; // Get the color from the server-side template
+      const colorCallout = document.getElementById('colorCallout');
+
+      // Display the current color
+      colorCallout.textContent = `The current background color is: ${color.toUpperCase()}`;
+    }
+
+    // Call the function when the page loads
+    callOutColor();
+  </script>
+</body>
+</html>
