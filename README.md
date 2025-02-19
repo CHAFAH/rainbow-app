@@ -38,7 +38,7 @@ Before running the application, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/rainbow-app.git
+git clone [https://github.com/your-username/rainbow-app.git](https://github.com/CHAFAH/rainbow-app.git)
 cd rainbow-app
 ```
 
